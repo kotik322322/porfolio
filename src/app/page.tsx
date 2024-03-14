@@ -10,17 +10,45 @@ export default function Home() {
   const activeHandler = () => setActive(!active);
   return (
     <main className="w-full h-auto p-8 flex-1 relative">
-      <Logo />
-      <Link className="absolute top-1/2 left-3 -rotate-90" href={"/work"}>
+      {/* <Logo active={active}/> */}
+      <Link
+        href={"/"}
+        className={`absolute top-10 text-xl left-20  font-bold ${
+          active && "text-white  z-50 shadow-text"
+        }`}
+      >
+        KostiantynDev
+      </Link>
+      <Link
+        className={`absolute top-1/4 left-3 -rotate-90 hover:scale-110 transition duration-100 font-bold text-xl z-50  ${
+          active && "text-white shadow-text"
+        }`}
+        href={"/work"}
+      >
         Work
       </Link>
-      <Link className="absolute top-1/2 right-3 rotate-90" href={"/about"}>
+      <Link
+        className={`absolute top-1/4 right-3 rotate-90 hover:scale-110 transition duration-100 font-bold text-xl z-50  ${
+          active && "text-white shadow-text"
+        }`}
+        href={"/about"}
+      >
         About
       </Link>
-      <Link className="absolute bottom-5 left-1/4" href={"/skills"}>
+      <Link
+        className={`absolute top-2/4 left-3 -rotate-90 hover:scale-110 transition duration-100 font-bold text-xl z-50   ${
+          active && "text-white shadow-text"
+        }`}
+        href={"/skills"}
+      >
         Skills
       </Link>
-      <Link className="absolute bottom-5 right-1/4" href={"/contact"}>
+      <Link
+        className={`absolute top-2/4 right-3 rotate-90 hover:scale-110 transition duration-100 font-bold ${
+          active && "text-white text-xl z-50 shadow-text"
+        }`}
+        href={"/contact"}
+      >
         Contact
       </Link>
 

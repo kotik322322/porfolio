@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  box-sizing: border-box;
+@layer utilities {
+  .shadow-text {
+    text-shadow: rgb(0, 0, 0) 0px 0px 4px;
+  }
 }
