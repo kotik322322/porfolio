@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${karla.className} bg-bgColor`}>
-        <div className="min-h-screen flex flex-col ">{children}</div>
+        <div className="min-h-screen flex flex-col">{children}</div>
       </body>
     </html>
   );
