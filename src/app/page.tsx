@@ -9,7 +9,7 @@ export default function Home() {
   const [active, setActive] = useState<boolean>(false);
   const activeHandler = () => setActive(!active);
   return (
-    <main className="w-full h-full flex-1  relative">
+    <main className="w-full h-auto p-8 flex-1 relative">
       <Logo />
       <Link className="absolute top-1/2 left-3 -rotate-90" href={"/work"}>
         Work

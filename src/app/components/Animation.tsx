@@ -10,7 +10,7 @@ interface AnimationProps {
 const Animation = ({ active, onClick }: AnimationProps) => {
   const sizeVariants = {
     big: { width: "160px", height: "160px" },
-    small: { width: "80px", height: "80px" },
+    small: { width: "60px", height: "60px" },
   };
 
   const positionVariants = {
