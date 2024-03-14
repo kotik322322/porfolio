@@ -59,7 +59,7 @@ const Promo = ({ active }: PromoProps) => {
           className="flex flex-col justify-center items-start gap-y-5 pl-8 w-full h-1/2 bg-transparent border-2 border-white border-b-0 "
         >
           <span className="text-5xl text-white font-extrabold">Hi,</span>
-          <span className="text-3xl text-white">I'm Kostiantyn Marfin</span>
+          <span className="text-3xl text-white">I&apos;m Kostiantyn Marfin</span>
           <span className="text-base text-[#FCF6F499]">
             I code beautiful website
           </span>
