@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 interface AnimationProps {
   active: boolean;
@@ -20,7 +20,7 @@ const Animation = ({ active, onClick }: AnimationProps) => {
       translateX: "50%",
       translateY: "50%",
     },
-    active: { bottom: "15%", right: "15%", transition: { duration: 0.5 } },
+    active: { bottom: "10%", right: "10%", transition: { duration: 0.5 } },
     inActive: {
       bottom: "50%",
       right: "50%",
