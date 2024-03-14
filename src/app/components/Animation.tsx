@@ -20,7 +20,7 @@ const Animation = ({ active, onClick }: AnimationProps) => {
       translateX: "50%",
       translateY: "50%",
     },
-    active: { bottom: "15%", right: "20%", transition: { duration: 0.5 } },
+    active: { bottom: "10%", right: "10%", transition: { duration: 0.5 } },
     inActive: {
       bottom: "50%",
       right: "50%",
@@ -41,7 +41,6 @@ const Animation = ({ active, onClick }: AnimationProps) => {
         variants={sizeVariants}
         initial={"big"}
         animate={active ? "small" : "big"}
-        // transition={{ duration: 0.5, ease: "linear" }}
         className={`border-8 border-black rounded-full overflow-hidden`}
       >
         <motion.svg
