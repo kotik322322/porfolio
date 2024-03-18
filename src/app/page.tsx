@@ -1,50 +1,69 @@
-"use client";
-import Animation from "./components/Animation";
-import Link from "next/link";
-import Logo from "./components/Logo";
-import { useState } from "react";
-import Promo from "./components/Promo";
-import Socials from "./components/Socials";
+'use client';
+import Animation from './components/Animation';
+import Link from 'next/link';
+import Logo from './components/Logo';
+import { useState } from 'react';
+import Promo from './components/Promo';
+import Socials from './components/Socials';
+import { motion } from 'framer-motion';
+import NavLinks from './components/NavLinks';
 
 export default function Home() {
   const [active, setActive] = useState<boolean>(false);
   const activeHandler = () => setActive(!active);
   return (
-    <main className="w-full h-auto p-8 flex-1 relative">
+    <main className="w-full h-auto p-8 flex-1 relative overflow-hidden">
       <Logo active={active} />
 
-      <Link
-        className={`absolute top-1/4 left-3 -rotate-90 hover:scale-110 transition duration-100 font-bold text-xl z-50  ${
-          active && "text-white shadow-text"
-        }`}
-        href={"/work"}
-      >
-        Work
-      </Link>
-      <Link
-        className={`absolute top-1/4 right-3 rotate-90 hover:scale-110 transition duration-100 font-bold text-xl z-50  ${
-          active && "text-white shadow-text"
-        }`}
-        href={"/about"}
-      >
-        About
-      </Link>
-      <Link
-        className={`absolute top-2/4 left-3 -rotate-90 hover:scale-110 transition duration-100 font-bold text-xl z-50   ${
-          active && "text-white shadow-text"
-        }`}
-        href={"/skills"}
-      >
-        Skills
-      </Link>
-      <Link
-        className={`absolute top-2/4 right-3 rotate-90 hover:scale-110 transition duration-100 font-bold text-xl z-50  ${
-          active && "text-white shadow-text"
-        }`}
-        href={"/contact"}
-      >
-        Contact
-      </Link>
+      <motion.div
+        initial={{ rotate: -90, top: '25%', left: -50 }}
+        animate={{
+          top: '25%',
+          left: '12px',
+          transition: { duration: 1, delay: 0.5, type: 'spring' },
+        }}
+        whileHover={{ scale: 1.1 }}
+        className={`absolute font-bold text-xl z-50  ${active && 'text-white shadow-text'}`}>
+        <Link href={'/work'}>Work</Link>
+      </motion.div>
+
+      <motion.div
+        initial={{ rotate: 90, top: '25%', right: -50 }}
+        animate={{
+          top: '25%',
+          right: '12px',
+
+          transition: { duration: 1, delay: 0.5, type: 'spring' },
+        }}
+        whileHover={{ scale: 1.1 }}
+        className={`absolute font-bold text-xl z-50  ${active && 'text-white shadow-text'}`}>
+        <Link href={'/about'}>About</Link>
+      </motion.div>
+
+      <motion.div
+        initial={{ rotate: -90, top: '50%', left: -50 }}
+        animate={{
+          top: '50%',
+          left: '12px',
+          transition: { duration: 1, delay: 0.5, type: 'spring' },
+        }}
+        whileHover={{ scale: 1.1 }}
+        className={`absolute font-bold text-xl z-50   ${active && 'text-white shadow-text'}`}>
+        <Link href={'/skills'}>Skills</Link>
+      </motion.div>
+
+      <motion.div
+        initial={{ rotate: 90, top: '50%', right: -50 }}
+        animate={{
+          top: '50%',
+          right: '12px',
+          transition: { duration: 1, delay: 0.5, type: 'spring' },
+        }}
+        whileHover={{ scale: 1.1 }}
+        className={`absolute font-bold text-xl z-50  ${active && 'text-white shadow-text'}`}>
+        <Link href={'/contact'}>Contact</Link>
+      </motion.div>
+      {/* <NavLinks active={active}/> */}
 
       <Socials />
 
