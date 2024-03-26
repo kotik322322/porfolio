@@ -75,6 +75,7 @@ const Animation = ({ active, onClick }: AnimationProps) => {
           </g>
         </motion.svg>
       </motion.div>
+        {!active && <span className="absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-[100px] text-black z-50">click here</span>}
     </motion.div>
   );
 };
