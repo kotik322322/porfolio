@@ -1,23 +1,28 @@
-import { useMemo } from 'react';
-import Particles, { initParticlesEngine } from '@tsparticles/react';
-import { type Container, type ISourceOptions } from '@tsparticles/engine';
-import { loadSlim } from '@tsparticles/slim';
-import lightConfig from '../data/lightConfig.json';
+// import ConfigDark from "../config/particlesjs-config.json";
+import ConfigLight from "../data/lightConfig.json";
+
+// import Particles from "react-particles-js"
+import Particles from "react-tsparticles";
+import { loadFull } from "tsparticles";
+
+
+
 
 const ParticlesComponent = () => {
-
-  initParticlesEngine(async (engine) => {
-    await loadSlim(engine);
-  })
-  const particlesLoaded = async (container?: Container): Promise<void> => {
-    console.log(container);
+// This is new implementation where I have used react-tsparticles instead of react-particles-js
+  const particlesInit = async (main:any) => {
+    await loadFull(main);
   };
 
-//   const options: ISourceOptions = useMemo(() => lightConfig, []);
 
   return (
     <div className="absolute top-0 right-0 bottom-0 left-0 z-0">
-      <Particles id="tsparticles" particlesLoaded={particlesLoaded} options={lightConfig} />
+      <Particles
+        id="tsparticles"
+        style={{ position: "absolute", top: 0 }}
+        params={ConfigLight}
+        init={particlesInit} 
+      />
     </div>
   );
 };
