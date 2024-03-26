@@ -7,25 +7,20 @@ import lightConfig from '../data/lightConfig.json';
 const ParticlesComponent = () => {
   const [init, setInit] = useState(false);
 
-  useEffect(() => {
-    initParticlesEngine(async (engine) => {
-      await loadFull(engine);
-    }).then(() => {
-      setInit(true);
-    });
-  }, []);
-
+  initParticlesEngine(async (engine) => {
+    await loadFull(engine);
+  })
   const particlesLoaded = async (container?: Container): Promise<void> => {
     console.log(container);
   };
 
   const options: ISourceOptions = useMemo(() => lightConfig, []);
 
-  if (init) {
-    return <div className='absolute top-0 right-0 bottom-0 left-0 z-0'><Particles id="tsparticles" particlesLoaded={particlesLoaded} options={options} /></div>;
-  }
-
-  return <></>;
+  return (
+    <div className="absolute top-0 right-0 bottom-0 left-0 z-0">
+      <Particles id="tsparticles" particlesLoaded={particlesLoaded} options={options} />
+    </div>
+  );
 };
 
 export default ParticlesComponent;
